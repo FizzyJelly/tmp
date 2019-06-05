@@ -1,0 +1,8 @@
+<h1>Users</h1>
+<%= link_to "Add client", edit_user_path(:client) %> <br>
+<% unless @clients.nil? %>
+  <% @clients.each_with_index do |user, index| %>
+    <%= link_to "#{user[:Name]} #{user[:Surname]}", "/users/#{index}/" %>
+    <br>
+  <% end %>
+<% end %>
